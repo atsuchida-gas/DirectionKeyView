@@ -1,7 +1,9 @@
 # DirectionKeyView
 
 仕様
+
 ・Rasberry PiのGPIO情報をGASで公開する
+
 ・非同期通信にてGPIO情報を自動リフレッシュする
 
 
