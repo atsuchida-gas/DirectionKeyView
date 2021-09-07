@@ -7,15 +7,19 @@
 
 ファイル構成
 ・code.gs
+
 　　∟GAS起動時に実行されるファイル。基本的にJS表記。
   
 ・index.html
+
 　　∟アクセスがあった際に表示されるhtmlファイル。
   
 ・main.html
+
 　　∟html内でのJS処理を記載。
   
 ・CSS.html
+
 　　∟CSSを記載。（今回は未使用）
   
   
