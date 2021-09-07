@@ -1,0 +1,43 @@
+<!-->
+  <ur>内のデータを編集します
+<-->
+<p>DirectionKeyView</p>
+
+<ul id="data">
+    <li>Loading...</li>
+</ul> 
+
+<script>
+
+//1000msecでの定期実行 
+$(function() {
+  setInterval(runGetDataGS, 1000);
+});
+
+//id=dataを編集する
+function showThings(things) {
+  var list = $('#data');
+  list.empty();　//ここでリストをリフレッシュしないと空データが出てバグります
+  
+  /*今回は二次配列の列数も行数が決まってますが、せっかくサンプルなので列だけ変数で書き直しました
+  列行両方とも数が決まってない場合はforの中にfor組んで上手いことやってください*/
+  for (var i = 0; i < things[0].length; i++) {
+    list.append("<li>" + things[0][i] + " : " + things[1][i] + "</li>");
+
+    //console.log(list);　←至るところにこれ入れてデバッグしてました、コンソールログまじで便利です
+  }
+}
+
+/*
+  上の定期実行で走らせる関数
+  バグ防止の為に引数としてshowThingsを走らせてますが、普通に実行してもいいです
+  google.script.runはGAS特有の関数で、.gsファイルから関数引っ張るときにはこれ使います
+*/
+function runGetDataGS() {
+  google.script.run.withSuccessHandler(showThings)
+    .getData(); 
+}
+
+
+</script>
+
